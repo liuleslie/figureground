@@ -1,0 +1,791 @@
+<!DOCTYPE html> 
+<html>
+  <head> 
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^3.2.x/dist/aframe-animation-component.min.js"></script>
+
+  </head>
+  <body style="margin:0px; overflow:hidden;">
+    <!-- <a-scene> -->
+  
+    <a-scene embedded arjs="sourceType:webcam;">
+
+
+      <a-assets>
+        <img id="s" src="letters/s_s.png">
+        <img id="h" src="letters/s_h.png">
+        <img id="a" src="letters/s_a.png">
+        <img id="d" src="letters/s_d.png">
+        <img id="o" src="letters/s_o.png">
+        <img id="w" src="letters/s_w.png">
+        <img id="l" src="letters/s_l.png">
+        <img id="i" src="letters/s_i.png">
+        <img id="g" src="letters/s_g.png">
+        <img id="t" src="letters/s_t.png">
+
+        <img id="s_inv" src="letters/s_s_inv.png">
+        <img id="h_inv" src="letters/s_h_inv.png">
+        <img id="a_inv" src="letters/s_a_inv.png">
+        <img id="d_inv" src="letters/s_d_inv.png">
+        <img id="o_inv" src="letters/s_o_inv.png">
+        <img id="w_inv" src="letters/s_w_inv.png">
+        <img id="l_inv" src="letters/s_l_inv.png">
+        <img id="i_inv" src="letters/s_i_inv.png">
+        <img id="g_inv" src="letters/s_g_inv.png">
+        <img id="t_inv" src="letters/s_t_inv.png">
+      </a-assets>
+
+<!-- LHS -->
+<!-- 
+      <a-marker preset="hiro">   -->
+
+     <a-marker type="pattern" url="fg1.patt"> 
+
+
+      <a-entity id="wrapper" rotation="-90"
+        scale="0.4 0.4 0.4">
+        <!-- rotation= -90 for standing text-->
+        <a-entity id="light_LEFT" 
+          position="-4 2 -2"
+          rotation="">
+
+          <a-image src="#l" position="0 4 0">
+<!--             <a-image src="#l_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: 1 -0.5 0; loop:false; dur:6500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.2; dur:5400; delay:7000"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: 2 -1.5 0; loop:false; dur:6500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.4; dur:2500; delay:7000"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: 3 -2.5 0; loop:false; dur:6500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:1000; delay:7000"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: 4 -3.5 0; loop:false; dur:6500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.4; dur:3000; delay:7000"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: 5 -4.5 0; loop:false; dur:6500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 1; dur:500; delay:7000"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: 6 -5.5 0; loop:false; dur:6500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:2000; delay:7000"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+<!-- glow animation:  animation__glow2nd="property:opacity; from:1; to:0.2; dur:5400; dir: alternate; loop:true; delay:15000"></a-image> -->
+
+
+          <a-image src="#i" position="0 3 0">
+         <!--    <a-image src="#i_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: 1 -0.7 0; loop:false; dur:7200;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:3000; delay:7500"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: 2 -1.7 0; loop:false; dur:7300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.4; dur:4000; delay:7500"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: 3 -2.7 0; loop:false; dur:7250;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:3000; delay:7000"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: 4 -3.7 0; loop:false; dur:7300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.25; dur:6000; delay:7500"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: 5 -4.7 0; loop:false; dur:7300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.9; dur:1000; delay:7500"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: 6 -5.7 0; loop:false; dur:7340;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.45; dur:4500; delay:7500"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+
+          <a-image src="#g" position="0 2 0">
+           <!--  <a-image src="#g_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: 1 -0.9 0; loop:false; dur:7600;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:2000; delay:7800"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: 2 -1.9 0; loop:false; dur:7650;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:2000; delay:7800"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: 3 -2.9 0; loop:false; dur:7560;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 1; dur:4000; delay:7800"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: 4 -3.9 0; loop:false; dur:7750;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:2000; delay:7800"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: 5 -4.9 0; loop:false; dur:7800;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:6000; delay:7800"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: 6 -5.9 0; loop:false; dur:7850;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.47; dur:4500; delay:78600"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+
+          <a-image src="#h" position="0 1 0">
+          <!--   <a-image src="#h_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: 1 -1 0; loop:false; dur:8000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:4000; delay:8500"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: 2 -2 0; loop:false; dur:8300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.7; dur:3000; delay:8500"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: 3 -3 0; loop:false; dur:8250;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:6000; delay:8500"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: 4 -4 0; loop:false; dur:8300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:2500; delay:8500"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: 5 -5 0; loop:false; dur:8350;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.9; dur:3400; delay:8500"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: 6 -6 0; loop:false; dur:8300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.1; dur:6000; delay:8500"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+
+          <a-image src="#t" position="0 0 0">
+         <!--    <a-image src="#t_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: 1 -1.5 0; loop:false; dur:8570;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:5000; delay:9000"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: 2 -2.5 0; loop:false; dur:8750;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:2000; delay:9000"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: 3 -3.5 0; loop:false; dur:8600;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.9; dur:5000; delay:9000"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: 4 -4.5 0; loop:false; dur:8650;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.75; dur:2500; delay:9000"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: 5 -5.5 0; loop:false; dur:8900;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:4250; delay:9000"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: 6 -6.5 0; loop:false; dur:9500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.32; dur:2300; delay:9000"
+              ></a-image>
+            </a-entity>
+          </a-image>
+        </a-entity>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- RHS -->
+
+          <!-- rotation= -90 for standing text-->
+        <a-entity id="light_RIGHT" 
+          position="4 2 -2"
+          rotation="" >
+
+          <a-image src="#l" position="0 4 0">
+          <!--   <a-image src="#l_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: -1 -0.5 0; loop:false; dur:7000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:4000; delay:7500"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: -2 -1.5 0; loop:false; dur:7000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.2; dur:7000; delay:7500"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: -3 -2.5 0; loop:false; dur:7000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:4000; delay:7500"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: -4 -3.5 0; loop:false; dur:6800;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:5000; delay:7500"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: -5 -4.5 0; loop:false; dur:7100;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.1; dur:9000; delay:7500"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: -6 -5.5 0; loop:false; dur:7000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.4; dur:7000; delay:7500"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+<!-- glow animation:  animation__glow2nd="property:opacity; from:1; to:0.2; dur:5400; dir: alternate; loop:true; delay:15000"></a-image> -->
+
+
+          <a-image src="#i" position="0 3 0">
+           <!--  <a-image src="#i_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: -1 -0.7 0; loop:false; dur:7340;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:4000; delay:8000"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: -2 -1.7 0; loop:false; dur:7300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:5000; delay:8000"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: -3 -2.7 0; loop:false; dur:7230;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 1; dur:3000; delay:8000"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: -4 -3.7 0; loop:false; dur:7250;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.2; dur:2000; delay:8000"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: -5 -4.7 0; loop:false; dur:7430;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.7; dur:4000; delay:8000"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: -6 -5.7 0; loop:false; dur:7500;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:1000; delay:8000"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+
+          <a-image src="#g" position="0 2 0">
+          <!--   <a-image src="#g_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: -1 -0.9 0; loop:false; dur:7560;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.1; dur:6000; delay:8000"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: -2 -1.9 0; loop:false; dur:7650;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:8000; delay:8000"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: -3 -2.9 0; loop:false; dur:7600;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:3000; delay:8000"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: -4 -3.9 0; loop:false; dur:7860;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.1; dur:4000; delay:8000"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: -5 -4.9 0; loop:false; dur:7850;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.2; dur:7800; delay:8000"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: -6 -5.9 0; loop:false; dur:7800;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:3200; delay:8000"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+
+          <a-image src="#h" position="0 1 0">
+           <!--  <a-image src="#h_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000; delay:5000"></a-image> -->
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: -1 -1 0; loop:false; dur:8230;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:5000; delay:8500"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: -2 -2 0; loop:false; dur:8150;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.2; dur:6000; delay:8500"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: -3 -3 0; loop:false; dur:8350;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.7; dur:3000; delay:8500"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: -4 -4 0; loop:false; dur:8300;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.4; dur:2000; delay:8500"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: -5 -5 0; loop:false; dur:8650;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:6000; delay:8500"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: -6 -6 0; loop:false; dur:8600;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 1; dur:5000; delay:8500"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+
+          <a-image src="#t" position="0 0 0">
+          <!--   <a-image src="#t_inv" 
+            position="0 0 0.1" animation__lighten="property:material.opacity;
+            begin:fade;from:0;to:1;fill:forwards;dur:9000;delay:5000"></a-image> -->
+
+            <a-entity id="shadow">
+
+              <a-image src="#s"  
+                animation__move="property:position;
+                from: 0 0 0; to: -1 -1.5 0; loop:false; dur:8750;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.4; dur:3000; delay:9000"
+              ></a-image>
+
+              <a-image src="#h"  
+                animation__move="property:position;
+                from: 0 0 0; to: -2 -2.5 0; loop:false; dur:8800;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:2000; delay:9000"
+              ></a-image>
+
+              <a-image src="#a"  
+                animation__move="property:position;
+                from: 0 0 0; to: -3 -3.5 0; loop:false; dur:8820;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.3; dur:4000; delay:9000"
+              ></a-image>
+
+              <a-image src="#d"  
+                animation__move="property:position;
+                from: 0 0 0; to: -4 -4.5 0; loop:false; dur:8800;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.6; dur:8000; delay:9000"
+              ></a-image>
+
+              <a-image src="#o"  
+                animation__move="property:position;
+                from: 0 0 0; to: -5 -5.5 0; loop:false; dur:9000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.2; dur:9000; delay:9000"
+              ></a-image>
+
+              <a-image src="#w"  
+                animation__move="property:position;
+                from: 0 0 0; to: -6 -6.5 0; loop:false; dur:10000;"
+                animation__materialize="property:opacity;
+                begin:fade; to:0.8; fill:forwards; dur:6500"
+                animation__glow="property:opacity:from:0.8; 
+                dir:alternate; loop:true;
+                to: 0.5; dur:5000; delay:9000"
+              ></a-image>
+            </a-entity>
+          </a-image>
+
+
+        </a-entity>
+
+
+
+
+
+
+      </a-marker>
+      
+
+      <a-entity camera></a-entity>
+    
+    </a-scene>
+  </body>
+</html>
+
